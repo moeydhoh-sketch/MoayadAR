@@ -1,33 +1,30 @@
-name: Get Unity License
+name: Get Unity License ULF
 
 on:
   workflow_dispatch:
 
 jobs:
-  activation:
+  generate-license:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Extract Unity Version & Generate ALF
+      - name: Generate ULF File from Unity
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         run: |
-          # 1. استخراج رقم إصدار يونيتي الخاص بمشروعك تلقائياً
           UNITY_VER=$(grep "m_EditorVersion:" MoayadAR/ProjectSettings/ProjectVersion.txt | awk '{print $2}')
           echo "Target Unity Version: $UNITY_VER"
 
-          # 2. تشغيل بيئة يونيتي عبر Docker لاستخراج ملف التفعيل
           docker run --rm \
             -v ${{ github.workspace }}:/project \
-            -w /project \
             unityci/editor:ubuntu-${UNITY_VER}-base-3 \
-            unity-editor -batchmode -nographics -createManualActivationFile -logfile /dev/stdout || true
+            bash -c "unity-editor -batchmode -nographics -username '$UNITY_EMAIL' -password '$UNITY_PASSWORD' -logfile /dev/stdout || true; cp /root/.local/share/unity3d/Unity/*.ulf /project/UnityLicense.ulf || true"
 
-          # 3. نقل الملف إلى المجلد الرئيسي
-          find . -name "*.alf" -exec mv {} . \;
-
-      - name: Upload ALF File
+      - name: Upload ULF Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ManualActivationFile
-          path: ./*.alf
+          name: UnityLicenseFile
+          path: ./UnityLicense.ulf
