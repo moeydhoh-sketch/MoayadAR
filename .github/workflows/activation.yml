@@ -1,30 +1,56 @@
-name: Get Unity License ULF
+name: Build Android APK
 
 on:
   workflow_dispatch:
 
 jobs:
-  generate-license:
+  build:
+    name: Build Unity Android APK 📱
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Generate ULF File from Unity
+      - name: Free Disk Space
+        uses: jlumbroso/free-disk-space@v1.3.1
+        with:
+          tool-cache: false
+          android: false
+          dotnet: false
+          haskell: false
+          large-packages: false
+          docker-images: false
+
+      - name: Build APK via Docker Direct
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         run: |
+          # 1. استخراج رقم إصدار Unity للمشروع
           UNITY_VER=$(grep "m_EditorVersion:" MoayadAR/ProjectSettings/ProjectVersion.txt | awk '{print $2}')
           echo "Target Unity Version: $UNITY_VER"
 
+          # 2. إنشاء مجلد حفظ الـ APK
+          mkdir -p build/Android
+
+          # 3. تشغيل بناء أندرويد وتمرير بيانات الحساب للمحرك مباشرة
           docker run --rm \
             -v ${{ github.workspace }}:/project \
-            unityci/editor:ubuntu-${UNITY_VER}-base-3 \
-            bash -c "unity-editor -batchmode -nographics -username '$UNITY_EMAIL' -password '$UNITY_PASSWORD' -logfile /dev/stdout || true; cp /root/.local/share/unity3d/Unity/*.ulf /project/UnityLicense.ulf || true"
+            -w /project \
+            unityci/editor:ubuntu-${UNITY_VER}-android-3 \
+            unity-editor \
+              -batchmode \
+              -nographics \
+              -quit \
+              -projectPath MoayadAR \
+              -buildTarget Android \
+              -buildAndroidPlayer build/Android/MoayadAR.apk \
+              -username "$UNITY_EMAIL" \
+              -password "$UNITY_PASSWORD" \
+              -logfile /dev/stdout
 
-      - name: Upload ULF Artifact
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: UnityLicenseFile
-          path: ./UnityLicense.ulf
+          name: MoayadAR-APK
+          path: build/Android/*.apk
