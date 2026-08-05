@@ -1,0 +1,14 @@
+{
+    "name": "MoayadAR.UI",
+    "rootNamespace": "MoayadAR.UI",
+    "references": [
+        "MoayadAR.Core",
+        "MoayadAR.Localization",
+        "MoayadAR.Analysis",
+        "MoayadAR.Import",
+        "MoayadAR.Rendering"
+    ],
+    "includePlatforms": ["Android", "Editor"],
+    "excludePlatforms": [],
+    "autoReferenced": true
+}

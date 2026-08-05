@@ -1,0 +1,16 @@
+{
+    "name": "MoayadAR.AR",
+    "rootNamespace": "MoayadAR.AR",
+    "references": [
+        "MoayadAR.Core",
+        "MoayadAR.Persistence",
+        "MoayadAR.Localization",
+        "Unity.XR.ARFoundation",
+        "Unity.XR.ARCore",
+        "Unity.XR.CoreUtils",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": ["Android", "Editor"],
+    "excludePlatforms": [],
+    "autoReferenced": true
+}

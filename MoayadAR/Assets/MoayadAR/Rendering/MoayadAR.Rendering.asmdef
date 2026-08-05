@@ -1,0 +1,9 @@
+{
+    "name": "MoayadAR.Rendering",
+    "rootNamespace": "MoayadAR.Rendering",
+    "references": ["MoayadAR.Core", "MoayadAR.OnDeviceAI"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "autoReferenced": true,
+    "noEngineReferences": true
+}

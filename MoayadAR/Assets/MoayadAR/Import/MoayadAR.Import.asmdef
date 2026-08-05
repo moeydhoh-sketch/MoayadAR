@@ -1,0 +1,9 @@
+{
+    "name": "MoayadAR.Import",
+    "rootNamespace": "MoayadAR.Import",
+    "references": ["MoayadAR.Core", "MoayadAR.Analysis"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "autoReferenced": true,
+    "noEngineReferences": true
+}

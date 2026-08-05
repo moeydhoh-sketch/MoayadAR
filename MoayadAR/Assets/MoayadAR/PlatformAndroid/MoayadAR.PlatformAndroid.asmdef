@@ -1,0 +1,8 @@
+{
+    "name": "MoayadAR.PlatformAndroid",
+    "rootNamespace": "MoayadAR.PlatformAndroid",
+    "references": ["MoayadAR.Core", "MoayadAR.OnDeviceAI"],
+    "includePlatforms": ["Android", "Editor"],
+    "excludePlatforms": [],
+    "autoReferenced": true
+}

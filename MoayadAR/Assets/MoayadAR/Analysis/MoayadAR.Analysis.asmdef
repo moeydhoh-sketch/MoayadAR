@@ -1,0 +1,9 @@
+{
+    "name": "MoayadAR.Analysis",
+    "rootNamespace": "MoayadAR.Analysis",
+    "references": ["MoayadAR.Core"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "autoReferenced": true,
+    "noEngineReferences": true
+}

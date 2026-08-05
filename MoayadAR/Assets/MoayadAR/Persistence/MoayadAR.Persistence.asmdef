@@ -1,0 +1,9 @@
+{
+    "name": "MoayadAR.Persistence",
+    "rootNamespace": "MoayadAR.Persistence",
+    "references": ["MoayadAR.Core"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "autoReferenced": true,
+    "noEngineReferences": true
+}

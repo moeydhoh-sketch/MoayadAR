@@ -1,0 +1,14 @@
+{
+    "name": "MoayadAR.RenderingUnity",
+    "rootNamespace": "MoayadAR.RenderingUnity",
+    "references": [
+        "MoayadAR.Core",
+        "MoayadAR.Rendering",
+        "MoayadAR.OnDeviceAI",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.XR.ARFoundation"
+    ],
+    "includePlatforms": ["Android", "Editor"],
+    "excludePlatforms": [],
+    "autoReferenced": true
+}

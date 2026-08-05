@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "com.unity.cloud.gltfast": "6.1.0",
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.unity.xr.arfoundation": "6.3.5",
+    "com.unity.xr.arcore": "6.3.5",
+    "com.unity.xr.management": "4.5.3",
+    "com.unity.render-pipelines.universal": "17.3.0",
+    "com.unity.inputsystem": "1.14.2",
+    "com.unity.test-framework": "1.5.1",
+    "com.unity.modules.androidjni": "1.0.0",
+    "com.unity.modules.imageconversion": "1.0.0",
+    "com.unity.modules.jsonserialize": "1.0.0",
+    "com.unity.modules.screencapture": "1.0.0",
+    "com.unity.modules.vr": "1.0.0",
+    "com.unity.modules.xr": "1.0.0"
+  }
+}

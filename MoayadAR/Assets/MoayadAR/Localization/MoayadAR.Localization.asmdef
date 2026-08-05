@@ -1,0 +1,9 @@
+{
+    "name": "MoayadAR.Localization",
+    "rootNamespace": "MoayadAR.Localization",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "autoReferenced": true,
+    "noEngineReferences": true
+}

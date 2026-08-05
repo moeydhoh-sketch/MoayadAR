@@ -1,0 +1,49 @@
+<UXML xmlns="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+  <VisualElement name="root" class="screen">
+
+    <VisualElement name="top-bar" class="top-bar">
+      <Label name="app-title" text="Moayad AR" class="brand"/>
+      <Button name="btn-settings" class="icon-btn" text="Settings"/>
+    </VisualElement>
+
+    <VisualElement name="scan-hint" class="scan-hint">
+      <Label name="scan-label" text=""/>
+      <ProgressBar name="scan-coverage" low-value="0" high-value="100" value="0"/>
+    </VisualElement>
+
+    <VisualElement name="analysis-card" class="card analysis-card">
+      <Label name="analysis-title" class="card-title" text=""/>
+      <Label name="analysis-file" class="row"/>
+      <Label name="analysis-format" class="row"/>
+      <Label name="analysis-tris" class="row"/>
+      <Label name="analysis-rig" class="badge"/>
+      <VisualElement class="row-buttons">
+        <Button name="btn-rig-edit" class="btn-secondary" text=""/>
+        <Button name="btn-autoscale" class="btn-secondary" text=""/>
+      </VisualElement>
+    </VisualElement>
+
+    <VisualElement name="import-progress" class="card import-progress">
+      <Label name="import-phase" text=""/>
+      <ProgressBar name="import-bar" low-value="0" high-value="100" value="0"/>
+      <Button name="btn-import-cancel" class="btn-secondary" text=""/>
+    </VisualElement>
+
+    <VisualElement name="context-panel" class="card context-panel">
+      <VisualElement class="row-buttons">
+        <Button name="btn-raise" class="btn-secondary" text=""/>
+        <Button name="btn-lower" class="btn-secondary" text=""/>
+        <Button name="btn-undo" class="btn-secondary" text=""/>
+        <Button name="btn-redo" class="btn-secondary" text=""/>
+      </VisualElement>
+    </VisualElement>
+
+    <VisualElement name="bottom-bar" class="bottom-bar">
+      <Button name="btn-import" class="bar-btn" text=""/>
+      <Button name="btn-capture" class="bar-btn bar-btn-primary" text=""/>
+      <Button name="btn-realism" class="bar-btn" text=""/>
+      <Button name="btn-projects" class="bar-btn" text=""/>
+    </VisualElement>
+
+  </VisualElement>
+</UXML>

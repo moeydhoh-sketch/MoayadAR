@@ -1,0 +1,9 @@
+{
+    "name": "MoayadAR.OnDeviceAI",
+    "rootNamespace": "MoayadAR.OnDeviceAI",
+    "references": ["MoayadAR.Core"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "autoReferenced": true,
+    "noEngineReferences": true
+}

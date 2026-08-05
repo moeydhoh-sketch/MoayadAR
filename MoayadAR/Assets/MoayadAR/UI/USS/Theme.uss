@@ -1,0 +1,136 @@
+/* Moayad AR theme — tokens extracted from the real logo (branding/generated/design-tokens.json)
+   Espresso #2F1F18 · Coffee #4B342C · Dark Brown #3B241A · Caramel #B77A4A · Cream #F3E4D3 · Warm Gold #D6A15C */
+
+.screen {
+    flex-grow: 1;
+    justify-content: space-between;
+    background-color: rgba(36, 21, 15, 0.0); /* camera shows through; UI floats above */
+    padding: 12px;
+    padding-top: 24px;   /* S25 Ultra camera-cutout safe area baseline */
+    padding-bottom: 20px;
+}
+
+/* RTL: Arabic mirrors horizontal layout direction */
+.rtl .bottom-bar, .rtl .row-buttons, .rtl .top-bar {
+    flex-direction: row-reverse;
+}
+
+.top-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    color: #D6A15C;
+    font-size: 22px;
+    -unity-font-style: bold;
+}
+
+.card {
+    background-color: rgba(59, 36, 26, 0.92);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    padding: 14px;
+    margin: 8px;
+    color: #F3E4D3;
+}
+
+.card-title {
+    color: #D6A15C;
+    font-size: 18px;
+    -unity-font-style: bold;
+    margin-bottom: 6px;
+}
+
+.row { color: #F3E4D3; font-size: 14px; margin-top: 2px; }
+
+.badge {
+    color: #24150F;
+    background-color: #D6A15C;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 4px;
+    margin-top: 6px;
+    align-self: flex-start;
+}
+
+.analysis-card, .import-progress { display: none; }
+
+.bottom-bar {
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgba(47, 31, 24, 0.95);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 8px;
+}
+
+.bar-btn {
+    min-width: 64px;
+    min-height: 48px;   /* 48dp minimum touch target */
+    color: #F3E4D3;
+    background-color: rgba(111, 78, 55, 0.0);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    font-size: 13px;
+}
+
+.bar-btn:hover { background-color: #4B342C; }
+.bar-btn:active { background-color: #B77A4A; color: #24150F; }
+
+.bar-btn-primary {
+    background-color: #B77A4A;
+    color: #24150F;
+    -unity-font-style: bold;
+}
+
+.btn-secondary {
+    min-height: 48px;
+    color: #F3E4D3;
+    background-color: #6F4E37;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 4px;
+    padding: 8px;
+}
+
+.btn-secondary:disabled {
+    color: rgba(243, 228, 211, 0.4);
+    background-color: rgba(111, 78, 55, 0.4);
+}
+
+.row-buttons { flex-direction: row; flex-wrap: wrap; }
+
+.scan-hint {
+    position: absolute;
+    top: 72px;
+    align-self: center;
+    background-color: rgba(36, 21, 15, 0.8);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 8px;
+}
+
+.icon-btn {
+    min-width: 48px;
+    min-height: 48px;
+    color: #F3E4D3;
+    background-color: rgba(59, 36, 26, 0.9);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}

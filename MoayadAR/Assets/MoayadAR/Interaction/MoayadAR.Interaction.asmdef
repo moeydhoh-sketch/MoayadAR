@@ -1,0 +1,9 @@
+{
+    "name": "MoayadAR.Interaction",
+    "rootNamespace": "MoayadAR.Interaction",
+    "references": ["MoayadAR.Core"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "autoReferenced": true,
+    "noEngineReferences": true
+}

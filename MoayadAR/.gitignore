@@ -1,0 +1,39 @@
+# Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+.vs/
+.idea/
+*.csproj
+*.sln
+*.user
+
+# Build output
+*.apk
+*.aab
+*.unitypackage
+output/
+
+# Secrets — NEVER commit
+*.keystore
+keystore.properties
+google-services.json
+*.pem
+*.key
+
+# Imported user models & captured media (never user data in git)
+Assets/MoayadAR/ImportedModels/
+Captures/
+*.glb.user
+recordings/
+
+# Local environment
+.env
+.env.*
+tests-net/bin/
+tests-net/obj/

@@ -1,0 +1,8 @@
+{
+    "name": "MoayadAR.Capture",
+    "rootNamespace": "MoayadAR.Capture",
+    "references": ["MoayadAR.Core", "MoayadAR.Persistence"],
+    "includePlatforms": ["Android", "Editor"],
+    "excludePlatforms": [],
+    "autoReferenced": true
+}

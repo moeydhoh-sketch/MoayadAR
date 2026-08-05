@@ -1,0 +1,8 @@
+{
+    "name": "MoayadAR.Rigging",
+    "rootNamespace": "MoayadAR.Rigging",
+    "references": ["MoayadAR.Core", "MoayadAR.Persistence", "MoayadAR.Interaction"],
+    "includePlatforms": ["Android", "Editor"],
+    "excludePlatforms": [],
+    "autoReferenced": true
+}

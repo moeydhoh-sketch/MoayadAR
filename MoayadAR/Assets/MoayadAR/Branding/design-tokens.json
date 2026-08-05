@@ -1,0 +1,27 @@
+{
+  "source": "https://i.postimg.cc/jjPsJXbs/O.png (validated PNG 800x800 RGBA, sha256 recorded in BUILD_STATUS.md)",
+  "colors": {
+    "espresso": "#2F1F18",
+    "coffee": "#4B342C",
+    "darkBrown": "#3B241A",
+    "caramel": "#B77A4A",
+    "cream": "#F3E4D3",
+    "warmGold": "#D6A15C",
+    "surface": "#24150F",
+    "onSurface": "#F3E4D3",
+    "error": "#E07A5F",
+    "success": "#9DBE8C"
+  },
+  "typography": {
+    "arabic": "Noto Sans Arabic (OFL-1.1)",
+    "latin": "Inter (OFL-1.1)"
+  },
+  "motion": {
+    "panelMs": 220,
+    "pressMs": 90,
+    "respectReduceMotion": true
+  },
+  "touch": {
+    "minTargetDp": 48
+  }
+}
