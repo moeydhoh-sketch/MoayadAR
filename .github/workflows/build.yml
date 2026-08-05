@@ -5,23 +5,36 @@ on:
 
 jobs:
   build:
-    name: Build Unity Android APK
+    name: Build Unity Android APK 📱
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Build Unity Project
-        uses: game-ci/unity-builder@v4
+      - name: Build APK via Docker Direct
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-        with:
-          targetPlatform: Android
-          projectPath: MoayadAR
+        run: |
+          # 1. استخراج رقم إصدار Unity للمشروع
+          UNITY_VER=$(grep "m_EditorVersion:" MoayadAR/ProjectSettings/ProjectVersion.txt | awk '{print $2}')
+          echo "Target Unity Version: $UNITY_VER"
 
-      - name: Upload APK
+          # 2. إنشاء مجلد الحفظ
+          mkdir -p build/Android
+
+          # 3. تسجيل الدخول والبناء المباشر داخل Docker
+          docker run --rm \
+            -v ${{ github.workspace }}:/project \
+            -w /project \
+            unityci/editor:ubuntu-${UNITY_VER}-android-3 \
+            bash -c "
+              unity-editor -batchmode -nographics -username '$UNITY_EMAIL' -password '$UNITY_PASSWORD' -logfile /dev/stdout || true
+              unity-editor -batchmode -nographics -quit -projectPath MoayadAR -buildTarget Android -buildAndroidPlayer build/Android/MoayadAR.apk -logfile /dev/stdout
+            "
+
+      - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: MoayadAR-APK
-          path: build/Android/**/*.apk
+          path: build/Android/*.apk
